@@ -13,7 +13,7 @@ stages:
     steps:
     - task: Maven@3
       inputs:
-        mavenPomFile: 'demoapp\pom.xml'
+        mavenPomFile: 'demoapp/pom.xml'
         goals: 'test'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
