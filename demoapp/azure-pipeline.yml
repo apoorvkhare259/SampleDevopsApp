@@ -13,7 +13,7 @@ stages:
     steps:
     - task: Maven@3
       inputs:
-        mavenPomFile: 'demoapp/pom.xml'
+        mavenPomFile: 'demoapp\pom.xml'
         goals: 'test'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -39,9 +39,8 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-
-<<<<<<< HEAD
-    - task: CopyFiles@2
+    
+- task: CopyFiles@2
   inputs:
     Contents: '**/*.war'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -50,13 +49,4 @@ stages:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'MyBuildOutputs'
-    
-=======
-
-    - task: CopyPublishBuildArtifacts@1
-      inputs:
-        CopyRoot: '$(Build.ArtifactStagingDirectory)'
-        Contents: '**/*.war'
-        ArtifactName: 'Sample'
-        ArtifactType: 'FilePath'
->>>>>>> 4f9f56cb1985f3ac783cad4cff8ad138140622ab
+  
