@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                 bat "mvn -f demoapp/pom.xml -Dmaven.test.failure.ignore=true clean package
+                 bat "mvn -f demoapp/pom.xml -Dmaven.test.failure.ignore=true clean package"
             }
             post {
                 success {
