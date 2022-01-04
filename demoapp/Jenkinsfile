@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                'mvn -f demoapp/pom.xml clean package'
+                 bat "mvn -f demoapp/pom.xml -Dmaven.test.failure.ignore=true clean package"
             }
             post {
                 success {
@@ -19,6 +19,13 @@ pipeline {
             }
             
         }
-       
+        stage('Deploy to Production'){
+            steps{
+                timeout(time:5, unit:'DAYS'){
+                    input message:'Approve PRODUCTION Deployment?'
+                }
+                build job: 'Deploy_Application_Prod_Env'
+            }
+        }
     }
 }
