@@ -22,6 +22,11 @@ pipeline
         }
         
         }
+<<<<<<< HEAD:demoapp/JenkinsFile
 
 }
     
+=======
+    }
+}
+>>>>>>> 26cc1b1c7c2c6ca76bf526503518079f37499d99:demoapp/Jenkinsfile
