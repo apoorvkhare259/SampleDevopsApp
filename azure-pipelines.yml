@@ -21,7 +21,7 @@ steps:
       sonar.projectKey=test_repo_webapp
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '08'
+    versionSpec: '11'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
