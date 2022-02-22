@@ -18,7 +18,9 @@ steps:
       mvn clean verify sonar:sonar \
         -Dsonar.projectKey=test_repo_webapp \
         -Dsonar.host.url=http://137.184.220.156:9000 \
-        -Dsonar.login=8b7f25cdad9ce5a0c34bab2efaac95e22876c247
+        --Dsonar.login=“admin” -Dsonar.login=“admin12”
+
+
 
 - task: Maven@3
   inputs:
