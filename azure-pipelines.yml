@@ -15,12 +15,15 @@ steps:
     SonarQube: 'SonarQube'
     scannerMode: 'Other'
     extraProperties: |
-      mvn clean verify sonar:sonar \
-        -Dsonar.projectKey=test_repo_webapp \
-        -Dsonar.host.url=http://137.184.220.156:9000 \
-        --Dsonar.login=“admin” -Dsonar.login=“admin12”
-
-
+      # Additional properties that will be passed to the scanner,
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.projectKey=test_repo_webapp
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '11'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
 
 - task: Maven@3
   inputs:
